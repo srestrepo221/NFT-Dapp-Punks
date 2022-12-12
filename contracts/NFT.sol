@@ -13,7 +13,7 @@ contract NFT is ERC721Enumerable, Ownable {
     uint256 public maxSupply;
     uint256 public allowMintingOn;
    
-
+    
 
     event Mint(uint256 amount, address minter);
     event Withdraw(uint256 amount, address owner);
