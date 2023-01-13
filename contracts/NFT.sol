@@ -14,7 +14,6 @@ contract NFT is ERC721Enumerable, Ownable {
     uint256 public allowMintingOn;
    
     
-
     event Mint(uint256 amount, address minter);
     event Withdraw(uint256 amount, address owner);
 
@@ -25,7 +24,6 @@ contract NFT is ERC721Enumerable, Ownable {
         uint256 _maxSupply,
         uint256 _allowMintingOn,
         string memory _baseURI
-
         ) ERC721(_name, _symbol) {
             cost = _cost;
             maxSupply = _maxSupply;      
@@ -46,7 +44,6 @@ contract NFT is ERC721Enumerable, Ownable {
             // Do not let them mint more tokens than available
             require(supply + _mintAmount <= maxSupply);
 
-
             // Create tokens
             for( uint256 i = 1; i <= _mintAmount; i++) {
                _safeMint(msg.sender, supply + i ); 
@@ -54,7 +51,6 @@ contract NFT is ERC721Enumerable, Ownable {
 
             // Emit event
             emit Mint(_mintAmount, msg.sender);
-
         }
 
         // Return metadata IPFS url
